@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>OSINT | Content | Web Development</title>
-    <meta name="description" content="OSINT, ресерч, контент-менеджмент та створення лендінгів. Професійні послуги.">
-
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Expert Services: OSINT & Web Dev">
-    <meta property="og:description" content="OSINT, контент та сайти під ключ. Швидко та якісно.">
+    
+    <meta name="description" content="OSINT, ресерч та створення лендінгів. Професійні послуги під ключ.">
+    <meta property="og:title" content="Digital Services: OSINT & Web Dev">
+    <meta property="og:description" content="Дізнайтеся, що інтернет знає про вас. Замовте OSINT-аудит.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000">
 
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700&display=swap" rel="stylesheet">
@@ -23,6 +21,7 @@
             --text-dim: #888;
             --tg: #24A1DE;
             --wa: #25D366;
+            --test-color: #ff4d4d; /* Колір для блоку тесту */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -64,7 +63,6 @@
             border-radius: 12px;
             cursor: pointer;
             font-size: 0.85rem;
-            font-weight: 500;
             transition: 0.3s;
         }
         .lang-btn.active {
@@ -74,46 +72,60 @@
         }
 
         .avatar {
-            width: 100px;
-            height: 100px;
+            width: 90px;
+            height: 90px;
             background: linear-gradient(45deg, #222, #000);
-            border-radius: 35px;
+            border-radius: 30px;
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.2rem;
+            font-size: 2rem;
             border: 1px solid rgba(255,255,255,0.1);
         }
 
-        h1 { font-size: 1.8rem; margin-bottom: 8px; font-weight: 700; letter-spacing: -0.5px; }
-        .tagline { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 35px; height: 1.4em; }
+        h1 { font-size: 1.7rem; margin-bottom: 5px; font-weight: 700; letter-spacing: -0.5px; }
+        .tagline { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 30px; }
 
-        .services { text-align: left; margin-bottom: 40px; min-height: 220px; }
+        .services { text-align: left; margin-bottom: 30px; }
         .service-item {
-            margin-bottom: 20px;
-            padding-left: 20px;
+            margin-bottom: 15px;
+            padding-left: 15px;
             border-left: 2px solid rgba(255,255,255,0.1);
             display: none;
         }
-        .service-item.active { display: block; animation: fadeIn 0.4s ease-in-out; }
-        .service-item span { color: var(--accent); font-weight: 700; display: block; margin-bottom: 5px; }
-        .service-item p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.5; }
+        .service-item.active { display: block; animation: fadeIn 0.4s ease; }
+        .service-item span { color: var(--accent); font-weight: 700; display: block; margin-bottom: 3px; font-size: 0.95rem; }
+        .service-item p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.4; }
 
-        .contact-btns { display: flex; flex-direction: column; gap: 12px; }
+        /* Блок Тесту */
+        .test-box {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 77, 77, 0.05);
+            border: 1px dashed rgba(255, 77, 77, 0.3);
+            border-radius: 25px;
+            text-align: left;
+        }
+        .test-box h3 { font-size: 0.95rem; color: var(--test-color); margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+        .test-box p { font-size: 0.8rem; color: var(--text-dim); margin-bottom: 12px; line-height: 1.4; }
+
+        .contact-btns { display: flex; flex-direction: column; gap: 10px; }
         .btn {
             text-decoration: none;
-            padding: 16px;
-            border-radius: 22px;
+            padding: 14px;
+            border-radius: 18px;
             font-weight: 600;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: 0.3s;
+            font-size: 0.9rem;
         }
         .btn-tg { background: var(--tg); color: white; }
         .btn-wa { background: var(--wa); color: white; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .btn-test { background: var(--test-color); color: white; padding: 10px; font-size: 0.8rem; }
+        .btn:hover { transform: translateY(-2px); opacity: 0.9; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
     </style>
@@ -128,35 +140,43 @@
 
     <div class="avatar">🔍</div>
     
-    <h1 id="name">Expert Info & Content Studio</h1>
-    <p id="tagline" class="tagline">Цифрові рішення та OSINT</p>
+    <h1>OSINT & Digital</h1>
+    <p id="tagline" class="tagline">Цифрові рішення та аналітика</p>
 
     <div class="services">
         <div class="service-item lang-ua active">
             <span>1. OSINT / Ресерч</span>
-            <p>Збір і перевірка даних з відкритих джерел. Глибокий пошук інформації та аналітика.</p>
+            <p>Збір і перевірка даних з відкритих джерел. Глибокий пошук інформації.</p>
         </div>
         <div class="service-item lang-ua active">
             <span>2. Контент-менеджмент</span>
-            <p>Написання текстів, редактура та створення легкої графіки для вашого бізнесу.</p>
+            <p>Написання текстів (UA/EN), редактура та стильна графіка.</p>
         </div>
         <div class="service-item lang-ua active">
             <span>3. Сайти та Лендінги</span>
-            <p>Розробка сайтів-візиток та продаючих сторінок під ключ за короткий термін.</p>
+            <p>Швидка розробка сайтів-візиток та лендінгів «під ключ».</p>
         </div>
 
         <div class="service-item lang-en">
             <span>1. OSINT / Research</span>
-            <p>Open-source intelligence and data verification. Deep search and data analysis.</p>
+            <p>Open-source intelligence and data verification. Deep web search.</p>
         </div>
         <div class="service-item lang-en">
             <span>2. Content Management</span>
-            <p>Professional copywriting, editing, and clean graphic design for digital platforms.</p>
+            <p>Professional copywriting (UA/EN), editing, and graphic design.</p>
         </div>
         <div class="service-item lang-en">
             <span>3. Web Development</span>
-            <p>High-performance landing pages and business card websites delivered turnkey.</p>
+            <p>Turnkey landing pages and business card websites delivered fast.</p>
         </div>
+    </div>
+
+    <div class="test-box">
+        <h3 id="test-title">🛡️ Тест-драйв: ваша безпека</h3>
+        <p id="test-desc">Хочете дізнатися, що інтернет знає про вас? Напишіть «Аудит», і я зроблю швидкий ресерч вашого цифрового сліду.</p>
+        <a href="https://t.me/Core_Alive?text=Привіт! Хочу замовити експрес-аудит" class="btn btn-test">
+           Спробувати безкоштовно
+        </a>
     </div>
 
     <div class="contact-btns">
@@ -164,45 +184,39 @@
         <a href="https://wa.me/YOUR_NUMBER" class="btn btn-wa">WhatsApp</a>
     </div>
 </div>
-    
-    <div class="card" style="margin-top:20px; border-color: #ff4d4d;">
-    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">🛡️ Тест: Наскільки ви вразливі?</h3>
-    <p style="font-size: 0.85rem; color: var(--text-dim); margin-bottom: 15px;">
-       Напишіть мені "Аудит", і я перевірю ваш цифровий слід за 15 хвилин.
-    </p>
-    <a href="https://t.me/YOUR_NICKNAME?text=Привіт! Хочу замовити експрес-аудит" class="btn btn-tg" style="padding: 10px; font-size: 0.9rem;">
-       Спробувати безкоштовно
-    </a>
-</div>
 
 <script>
     function setLang(lang) {
-        // Кнопки
+        // Перемикання кнопок
         document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.remove('active');
-            if(btn.innerText.toLowerCase() === lang) btn.classList.add('active');
+            btn.classList.toggle('active', btn.innerText.toLowerCase() === lang);
         });
 
-        // Контент
+        // Перемикання сервісів
         document.querySelectorAll('.service-item').forEach(item => {
             item.classList.remove('active');
-            if (item.classList.contains('lang-' + lang)) {
-                item.classList.add('active');
-            }
+            if (item.classList.contains('lang-' + lang)) item.classList.add('active');
         });
 
-        // Заголовки
-        const data = {
-            ua: { tagline: "Цифрові рішення та OSINT" },
-           en: { tagline: "Digital solutions & OSINT" }
+        // Переклад статики
+        const translations = {
+            ua: {
+                tagline: "Цифрові рішення та аналітика",
+                testTitle: "🛡️ Тест-драйв: ваша безпека",
+                testDesc: "Хочете дізнатися, що інтернет знає про вас? Напишіть «Аудит», і я зроблю швидкий ресерч вашого цифрового сліду."
+            },
+            en: {
+                tagline: "Digital solutions & analytics",
+                testTitle: "🛡️ Test-drive: your security",
+                testDesc: "Want to know what the internet knows about you? Type 'Audit' and I'll do a quick research of your digital footprint."
+            }
         };
-        document.getElementById('tagline').innerText = data[lang].tagline;
+
+        document.getElementById('tagline').innerText = translations[lang].tagline;
+        document.getElementById('test-title').innerText = translations[lang].testTitle;
+        document.getElementById('test-desc').innerText = translations[lang].testDesc;
     }
 </script>
 
 </body>
 </html>
-
-
-
-
