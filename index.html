@@ -2,18 +2,9 @@
 <html lang="ua">
 <head>
     <meta charset="UTF-8">
-	<title>Коуч Одеса & Online | Бізнес та Лайф Коучинг | Alex Coach</title>
+    <title>Коуч Одеса & Online | Бізнес та Лайф Коучинг | Alex Coach</title>
     <meta name="description" content="Професійний коучинг в Одесі та онлайн. Масштабування бізнесу без вигорання, робота з самооцінкою та пошук балансу. Запишіться на сесію.">
-    <meta name="keywords" content="коуч одеса, бізнес коуч, лайф коучинг Україна, вигорання, особиста ефективність, Alex Coach">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Alex Coach">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://твой-сайт.com/"> <meta property="og:title" content="Alex Coach — Масштаб без вигорання">
-    <meta property="og:description" content="Трансформаційний коучинг для лідерів. Знайдіть свою ясність та енергію вже сьогодні.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800"> <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4345/4345564.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Coaching | UA & EN</title>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -56,9 +47,11 @@
         }
         .btn:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(107, 112, 92, 0.25); }
 
+        /* Кнопки в футері - ВИПРАВЛЕНО */
         .btn-messenger {
-            padding: 14px 28px; border-radius: 100px; color: white; text-decoration: none;
+            padding: 16px 32px; border-radius: 100px; color: white !important; text-decoration: none;
             font-weight: 600; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;
+            min-width: 180px; justify-content: center;
         }
         .btn-tg { background-color: var(--tg-color); }
         .btn-wa { background-color: var(--wa-color); }
@@ -68,21 +61,21 @@
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
         .card { background: var(--bg-color); padding: 50px 40px; border-radius: 40px; transition: var(--transition); }
 
-        footer { padding: 100px 0; text-align: center; background: #F0EEE9; border-radius: 80px 80px 0 0; }
-        .footer-links { margin-top: 30px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        /* Футер - ВИПРАВЛЕНО ВИДИМІСТЬ */
+        footer { padding: 80px 0 120px; text-align: center; background: #F0EEE9; border-radius: 80px 80px 0 0; color: var(--text-main); }
+        footer h2 { margin-bottom: 10px; color: var(--text-main); }
+        footer p { margin-bottom: 30px; color: var(--text-secondary); }
+        .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
 
-        /* Плавающие кнопки справа */
         .floating-contact { position: fixed; bottom: 30px; right: 30px; display: flex; flex-direction: column; gap: 12px; z-index: 1000; }
-        .float-btn { 
-            width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; 
-            justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transition: 0.3s;
-        }
-        .float-btn:hover { transform: scale(1.1); }
+        .float-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transition: 0.3s; }
         .float-btn svg { width: 28px; height: 28px; fill: white; }
 
         @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; }
+            .hero { flex-direction: column; text-align: center; padding: 40px 0; }
             h1 { font-size: 2.8rem; }
+            .hero-image { order: -1; margin-bottom: 20px; }
+            .btn-messenger { width: 100%; }
         }
     </style>
 </head>
@@ -109,19 +102,21 @@
     </section>
 
     <section class="features">
-        <h2 style="text-align:center; font-size:2.5rem;" id="feat-title">Як ми будемо працювати</h2>
-        <div class="grid">
-            <div class="card">
-                <h3 id="card1-t">01. Ясність</h3>
-                <p id="card1-p">Розберемо завали в думках і визначимо, що для вас дійсно важливо зараз.</p>
-            </div>
-            <div class="card">
-                <h3 id="card2-t">02. Енергія</h3>
-                <p id="card2-p">Знайдемо «витоки» вашого ресурсу та впровадимо звички, які наповнюють.</p>
-            </div>
-            <div class="card">
-                <h3 id="card3-t">03. Результат</h3>
-                <p id="card3-p">Створимо покроковий план переходу з точки А в точку Б без надриву.</p>
+        <div class="container">
+            <h2 style="text-align:center; font-size:2.5rem;" id="feat-title">Як ми будемо працювати</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3 id="card1-t">01. Ясність</h3>
+                    <p id="card1-p">Розберемо завали в думках і визначимо, що для вас дійсно важливо зараз.</p>
+                </div>
+                <div class="card">
+                    <h3 id="card2-t">02. Енергія</h3>
+                    <p id="card2-p">Знайдемо «витоки» вашого ресурсу та впровадимо звички, які наповнюють.</p>
+                </div>
+                <div class="card">
+                    <h3 id="card3-t">03. Результат</h3>
+                    <p id="card3-p">Створимо покроковий план переходу з точки А в точку Б без надриву.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -132,19 +127,15 @@
         <h2 id="foot-title">Напишіть мені особисто</h2>
         <p id="foot-desc">Оберіть зручний спосіб зв'язку, щоб обговорити ваш запит</p>
         <div class="footer-links">
-            <a href="https://t.me/YOUR_TG" class="btn-messenger b3tn-tg">Telegram</a>
+            <a href="https://t.me/Core_Alive" class="btn-messenger btn-tg">Telegram</a>
             <a href="https://wa.me/YOUR_WA" class="btn-messenger btn-wa">WhatsApp</a>
         </div>
     </div>
 </footer>
 
 <div class="floating-contact">
-    <a href="https://wa.me/YOUR_WA" class="float-btn btn-wa" title="WhatsApp">
-        <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.747-2.874-2.512-2.96-2.626-.087-.115-.708-.941-.708-1.793 0-.852.449-1.27.608-1.449.159-.179.346-.224.462-.224.115 0 .231.004.332.009.109.004.258-.041.404.309.145.35.497 1.214.541 1.304.043.089.072.193.014.309-.057.116-.087.19-.173.289l-.26.304c-.087.101-.177.211-.077.382.1.172.443.731.95 1.183.654.582 1.203.762 1.376.848.172.086.273.072.373-.043.1-.116.427-.497.542-.667.115-.17.23-.143.388-.085.158.058 1.001.472 1.173.558s.287.129.332.204c.045.075.045.433-.101.838z"/></svg>
-    </a>
-    <a href="https://t.me/Core_Alive" class="float-btn btn-tg" title="Telegram">
-        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.303.48-.429-.012-1.253-.245-1.868-.444-.754-.245-1.351-.375-1.299-.791.027-.217.327-.44.899-.67 3.513-1.53 5.855-2.54 7.025-3.03 3.348-1.396 4.043-1.638 4.499-1.646.1-.002.321.023.465.14.121.099.154.233.167.33.012.09.027.291.014.381z"/></svg>
-    </a>
+    <a href="https://wa.me/YOUR_WA" class="float-btn btn-wa"><svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.747-2.874-2.512-2.96-2.626-.087-.115-.708-.941-.708-1.793 0-.852.449-1.27.608-1.449.159-.179.346-.224.462-.224.115 0 .231.004.332.009.109.004.258-.041.404.309.145.35.497 1.214.541 1.304.043.089.072.193.014.309-.057.116-.087.19-.173.289l-.26.304c-.087.101-.177.211-.077.382.1.172.443.731.95 1.183.654.582 1.203.762 1.376.848.172.086.273.072.373-.043.1-.116.427-.497.542-.667.115-.17.23-.143.388-.085.158.058 1.001.472 1.173.558s.287.129.332.204c.045.075.045.433-.101.838z"/></svg></a>
+    <a href="https://t.me/Core_Alive" class="float-btn btn-tg"><svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.303.48-.429-.012-1.253-.245-1.868-.444-.754-.245-1.351-.375-1.299-.791.027-.217.327-.44.899-.67 3.513-1.53 5.855-2.54 7.025-3.03 3.348-1.396 4.043-1.638 4.499-1.646.1-.002.321.023.465.14.121.099.154.233.167.33.012.09.027.291.014.381z"/></svg></a>
 </div>
 
 <script>
@@ -176,7 +167,6 @@
     function setLang(lang, btn) {
         document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
         document.getElementById('hero-title').innerHTML = translations[lang].heroTitle;
         document.getElementById('hero-desc').innerText = translations[lang].heroDesc;
         document.getElementById('hero-btn').innerText = translations[lang].heroBtn;
@@ -191,7 +181,5 @@
         document.getElementById('foot-desc').innerText = translations[lang].footDesc;
     }
 </script>
-
 </body>
 </html>
-
