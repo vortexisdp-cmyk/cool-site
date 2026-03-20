@@ -136,15 +136,15 @@
 
 <!-- AI Chat Widget -->
 <div id="chat-widget" style="position:fixed;bottom:20px;left:20px;z-index:9999;">
-    <div id="chat-box" style="display:none;width:380px;height:400px;background:white;border-radius:10px;box-shadow:0 0 20px rgba(0,0,0,0.2);flex-direction:column;overflow:hidden;">
-        <div style="background:#6B705C;color:white;padding:15px;font-weight:bold;">AI Assistant</div>
-        <div id="messages" style="flex:1;padding:10px;overflow-y:auto;height:300px;"></div>
-        <div style="display:flex;padding:10px;border-top:1px solid #eee;">
-            <input id="user-input" type="text" placeholder="Type a message..." style="flex:1;padding:8px;border:1px solid #ddd;border-radius:5px;margin-right:5px;">
-            <button onclick="sendMessage()" style="background:#6B705C;color:white;border:none;padding:8px 12px;border-radius:5px;cursor:pointer;">Send</button>
+    <div id="chat-box" style="display:none;width:380px;height:420px;background:white;border-radius:16px;box-shadow:0 0 30px rgba(0,0,0,0.15);flex-direction:column;overflow:hidden;">
+        <div style="background:#6B705C;color:white;padding:16px 20px;font-weight:bold;font-size:1rem;">💬 AI Assistant</div>
+        <div id="messages" style="flex:1;padding:15px;overflow-y:auto;height:320px;display:flex;flex-direction:column;gap:8px;"></div>
+        <div style="display:flex;padding:12px;border-top:1px solid #eee;gap:8px;">
+            <input id="user-input" type="text" placeholder="Type a message..." style="flex:1;padding:10px 14px;border:1px solid #ddd;border-radius:25px;outline:none;font-size:0.9rem;">
+            <button onclick="sendMessage()" style="background:#6B705C;color:white;border:none;padding:10px 18px;border-radius:25px;cursor:pointer;font-size:0.9rem;font-weight:600;">Send</button>
         </div>
     </div>
-    <button onclick="toggleChat()" style="background:#6B705C;color:white;border:none;width:60px;height:60px;border-radius:50%;font-size:24px;cursor:pointer;box-shadow:0 0 10px rgba(0,0,0,0.2);">💬</button>
+    <button onclick="toggleChat()" style="background:#6B705C;color:white;border:none;width:60px;height:60px;border-radius:50%;font-size:26px;cursor:pointer;box-shadow:0 4px 15px rgba(107,112,92,0.4);">💬</button>
 </div>
 
 <script>
@@ -203,8 +203,11 @@
         const text = input.value.trim();
         if (!text) return;
 
-        messages.innerHTML += `<div style="text-align:right;margin:5px 0;"><span style="background:#6B705C;color:white;padding:5px 10px;border-radius:10px;">${text}</span></div>`;
+        messages.innerHTML += `<div style="text-align:right;"><span style="background:#6B705C;color:white;padding:8px 14px;border-radius:18px 18px 4px 18px;display:inline-block;max-width:85%;line-height:1.5;font-size:0.9rem;">${text}</span></div>`;
         input.value = '';
+        messages.scrollTop = messages.scrollHeight;
+
+        messages.innerHTML += `<div id="typing" style="text-align:left;"><span style="background:#f3f4f6;padding:8px 14px;border-radius:18px 18px 18px 4px;display:inline-block;font-size:0.9rem;color:#999;">...</span></div>`;
         messages.scrollTop = messages.scrollHeight;
 
         const response = await fetch(WEBHOOK_URL, {
@@ -214,7 +217,8 @@
         });
 
         const data = await response.text();
-        messages.innerHTML += `<div style="text-align:left;margin:5px 0;"><span style="background:#f3f4f6;padding:5px 10px;border-radius:10px;">${data}</span></div>`;
+        document.getElementById('typing').remove();
+        messages.innerHTML += `<div style="text-align:left;"><span style="background:#f3f4f6;padding:8px 14px;border-radius:18px 18px 18px 4px;display:inline-block;max-width:85%;line-height:1.5;font-size:0.9rem;">${data}</span></div>`;
         messages.scrollTop = messages.scrollHeight;
     }
 
@@ -222,6 +226,5 @@
         if (e.key === 'Enter') sendMessage();
     });
 </script>
-
 </body>
 </html>
