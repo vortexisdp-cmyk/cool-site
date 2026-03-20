@@ -203,7 +203,8 @@
         const text = input.value.trim();
         if (!text) return;
 
-        messages.innerHTML += `<div style="text-align:right;"><span style="background:#6B705C;color:white;padding:8px 14px;border-radius:18px 18px 4px 18px;display:inline-block;max-width:85%;line-height:1.5;font-size:0.9rem;">${text}</span></div>`;
+        const formatted = data.replace(/\n/g, '<br>');
+messages.innerHTML += `<div style="text-align:left;"><span style="background:#f3f4f6;padding:8px 14px;border-radius:18px 18px 18px 4px;display:inline-block;max-width:85%;line-height:1.6;font-size:0.9rem;">${formatted}</span></div>`;
         input.value = '';
         messages.scrollTop = messages.scrollHeight;
 
