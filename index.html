@@ -181,5 +181,25 @@
         document.getElementById('foot-desc').innerText = translations[lang].footDesc;
     }
 </script>
+
+    <!-- AI Chat Widget -->
+<div id="chat-widget" style="position:fixed;bottom:20px;right:20px;z-index:9999;">
+  <div id="chat-box" style="display:none;width:300px;height:400px;background:white;border-radius:10px;box-shadow:0 0 20px rgba(0,0,0,0.2);flex-direction:column;overflow:hidden;">
+    <div style="background:#6366f1;color:white;padding:15px;font-weight:bold;">AI Assistant</div>
+    <div id="messages" style="flex:1;padding:10px;overflow-y:auto;height:300px;"></div>
+    <div style="display:flex;padding:10px;border-top:1px solid #eee;">
+      <input id="user-input" type="text" placeholder="Type a message..." style="flex:1;padding:8px;border:1px solid #ddd;border-radius:5px;margin-right:5px;">
+      <button onclick="sendMessage()" style="background:#6366f1;color:white;border:none;padding:8px 12px;border-radius:5px;cursor:pointer;">Send</button>
+    </div>
+  </div>
+  <button onclick="toggleChat()" style="background:#6366f1;color:white;border:none;width:60px;height:60px;border-radius:50%;font-size:24px;cursor:pointer;box-shadow:0 0 10px rgba(0,0,0,0.2);">💬</button>
+</div>
+
+<script>
+const WEBHOOK_URL = 'ВСТАВЬ_СЮДА_СВОЮ_ССЫЛКУ';
+
+function toggleChat() {
+  const box = document.getElementById('chat-box');
+  box.
 </body>
 </html>
