@@ -9,9 +9,8 @@
     <style>
         :root {
             --bg-color: #F9F8F6;
-            --accent-color: #6B705C; 
+            --accent-color: #6B705C;
             --tg-color: #24A1DE;
-            --wa-color: #25D366;
             --text-main: #2C2C2C;
             --text-secondary: #666;
             --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -26,8 +25,8 @@
         .logo { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-style: italic; font-weight: 600; }
 
         .lang-switch { display: flex; gap: 8px; }
-        .lang-btn { 
-            background: white; border: 1px solid #eee; padding: 6px 14px; 
+        .lang-btn {
+            background: white; border: 1px solid #eee; padding: 6px 14px;
             border-radius: 20px; cursor: pointer; font-weight: 500; transition: 0.3s;
         }
         .lang-btn.active { background: var(--accent-color); color: white; border-color: var(--accent-color); }
@@ -47,21 +46,18 @@
         }
         .btn:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(107, 112, 92, 0.25); }
 
-        /* Кнопки в футері - ВИПРАВЛЕНО */
         .btn-messenger {
             padding: 16px 32px; border-radius: 100px; color: white !important; text-decoration: none;
             font-weight: 600; display: inline-flex; align-items: center; gap: 10px; transition: 0.3s;
             min-width: 180px; justify-content: center;
         }
         .btn-tg { background-color: var(--tg-color); }
-        .btn-wa { background-color: var(--wa-color); }
         .btn-messenger:hover { transform: scale(1.05); opacity: 0.9; }
 
         .features { padding: 100px 0; background: #fff; border-radius: 80px; margin-bottom: 50px; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
         .card { background: var(--bg-color); padding: 50px 40px; border-radius: 40px; transition: var(--transition); }
 
-        /* Футер - ВИПРАВЛЕНО ВИДИМІСТЬ */
         footer { padding: 80px 0 120px; text-align: center; background: #F0EEE9; border-radius: 80px 80px 0 0; color: var(--text-main); }
         footer h2 { margin-bottom: 10px; color: var(--text-main); }
         footer p { margin-bottom: 30px; color: var(--text-secondary); }
@@ -128,13 +124,27 @@
         <p id="foot-desc">Оберіть зручний спосіб зв'язку, щоб обговорити ваш запит</p>
         <div class="footer-links">
             <a href="https://t.me/Core_Alive" class="btn-messenger btn-tg">Telegram</a>
-         </div>
+        </div>
     </div>
 </footer>
 
 <div class="floating-contact">
-    <a href="https://wa.me/YOUR_WA" class="float-btn btn-wa"><svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.747-2.874-2.512-2.96-2.626-.087-.115-.708-.941-.708-1.793 0-.852.449-1.27.608-1.449.159-.179.346-.224.462-.224.115 0 .231.004.332.009.109.004.258-.041.404.309.145.35.497 1.214.541 1.304.043.089.072.193.014.309-.057.116-.087.19-.173.289l-.26.304c-.087.101-.177.211-.077.382.1.172.443.731.95 1.183.654.582 1.203.762 1.376.848.172.086.273.072.373-.043.1-.116.427-.497.542-.667.115-.17.23-.143.388-.085.158.058 1.001.472 1.173.558s.287.129.332.204c.045.075.045.433-.101.838z"/></svg></a>
-    <a href="https://t.me/Core_Alive" class="float-btn btn-tg"><svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.303.48-.429-.012-1.253-.245-1.868-.444-.754-.245-1.351-.375-1.299-.791.027-.217.327-.44.899-.67 3.513-1.53 5.855-2.54 7.025-3.03 3.348-1.396 4.043-1.638 4.499-1.646.1-.002.321.023.465.14.121.099.154.233.167.33.012.09.027.291.014.381z"/></svg></a>
+    <a href="https://t.me/Core_Alive" class="float-btn btn-tg">
+        <svg viewBox="0 0 24 24"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.562 8.161c-.18 1.897-.962 6.502-1.359 8.627-.168.9-.5 1.201-.82 1.23-.697.064-1.226-.461-1.901-.903-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.303.48-.429-.012-1.253-.245-1.868-.444-.754-.245-1.351-.375-1.299-.791.027-.217.327-.44.899-.67 3.513-1.53 5.855-2.54 7.025-3.03 3.348-1.396 4.043-1.638 4.499-1.646.1-.002.321.023.465.14.121.099.154.233.167.33.012.09.027.291.014.381z"/></svg>
+    </a>
+</div>
+
+<!-- AI Chat Widget -->
+<div id="chat-widget" style="position:fixed;bottom:20px;left:20px;z-index:9999;">
+    <div id="chat-box" style="display:none;width:300px;height:400px;background:white;border-radius:10px;box-shadow:0 0 20px rgba(0,0,0,0.2);flex-direction:column;overflow:hidden;">
+        <div style="background:#6B705C;color:white;padding:15px;font-weight:bold;">AI Assistant</div>
+        <div id="messages" style="flex:1;padding:10px;overflow-y:auto;height:300px;"></div>
+        <div style="display:flex;padding:10px;border-top:1px solid #eee;">
+            <input id="user-input" type="text" placeholder="Type a message..." style="flex:1;padding:8px;border:1px solid #ddd;border-radius:5px;margin-right:5px;">
+            <button onclick="sendMessage()" style="background:#6B705C;color:white;border:none;padding:8px 12px;border-radius:5px;cursor:pointer;">Send</button>
+        </div>
+    </div>
+    <button onclick="toggleChat()" style="background:#6B705C;color:white;border:none;width:60px;height:60px;border-radius:50%;font-size:24px;cursor:pointer;box-shadow:0 0 10px rgba(0,0,0,0.2);">💬</button>
 </div>
 
 <script>
@@ -179,27 +189,39 @@
         document.getElementById('foot-title').innerText = translations[lang].footTitle;
         document.getElementById('foot-desc').innerText = translations[lang].footDesc;
     }
+
+    const WEBHOOK_URL = 'https://hook.eu1.make.com/5d2l4nj9q24skl29nkcd21z7tnuh3b4x';
+
+    function toggleChat() {
+        const box = document.getElementById('chat-box');
+        box.style.display = box.style.display === 'none' ? 'flex' : 'none';
+    }
+
+    async function sendMessage() {
+        const input = document.getElementById('user-input');
+        const messages = document.getElementById('messages');
+        const text = input.value.trim();
+        if (!text) return;
+
+        messages.innerHTML += `<div style="text-align:right;margin:5px 0;"><span style="background:#6B705C;color:white;padding:5px 10px;border-radius:10px;">${text}</span></div>`;
+        input.value = '';
+        messages.scrollTop = messages.scrollHeight;
+
+        const response = await fetch(WEBHOOK_URL, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({message: text})
+        });
+
+        const data = await response.text();
+        messages.innerHTML += `<div style="text-align:left;margin:5px 0;"><span style="background:#f3f4f6;padding:5px 10px;border-radius:10px;">${data}</span></div>`;
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+    document.getElementById('user-input').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') sendMessage();
+    });
 </script>
 
-    <!-- AI Chat Widget -->
-<div id="chat-widget" style="position:fixed;bottom:20px;right:20px;z-index:9999;">
-  <div id="chat-box" style="display:none;width:300px;height:400px;background:white;border-radius:10px;box-shadow:0 0 20px rgba(0,0,0,0.2);flex-direction:column;overflow:hidden;">
-    <div style="background:#6366f1;color:white;padding:15px;font-weight:bold;">AI Assistant</div>
-    <div id="messages" style="flex:1;padding:10px;overflow-y:auto;height:300px;"></div>
-    <div style="display:flex;padding:10px;border-top:1px solid #eee;">
-      <input id="user-input" type="text" placeholder="Type a message..." style="flex:1;padding:8px;border:1px solid #ddd;border-radius:5px;margin-right:5px;">
-      <button onclick="sendMessage()" style="background:#6366f1;color:white;border:none;padding:8px 12px;border-radius:5px;cursor:pointer;">Send</button>
-    </div>
-  </div>
-  <button onclick="toggleChat()" style="background:#6366f1;color:white;border:none;width:60px;height:60px;border-radius:50%;font-size:24px;cursor:pointer;box-shadow:0 0 10px rgba(0,0,0,0.2);">💬</button>
-</div>
-
-<script>
-const WEBHOOK_URL = 'https://hook.eu1.make.com/5d2l4nj9q24skl29nkcd21z7tnuh3b4x';
-
-function toggleChat() {
-  const box = document.getElementById('chat-box');
-    
-  box.
 </body>
 </html>
